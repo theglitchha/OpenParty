@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://drhh80h7m07gx"]
+
+[ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="1_is3ko"]
+[ext_resource type="Resource" path="res://tube_context.tres" id="2_utnqj"]
+
+[node name="MultiplayerHandler" type="Node" unique_id=318501224]
+
+[node name="TubeClient" type="Node" parent="." unique_id=533879984]
+script = ExtResource("1_is3ko")
+context = ExtResource("2_utnqj")
+metadata/_custom_type_script = "uid://cy006uvidc4y"

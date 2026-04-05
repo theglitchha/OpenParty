@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c0odpx6esa1pn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oov0a"]
+
+[node name="WebMainMenu" type="CanvasLayer" unique_id=432293338]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=285806579]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=513805389]
+custom_minimum_size = Vector2(200, 240)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1269008476]
+layout_mode = 2
+text = "Username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=735110365]
+layout_mode = 2
+alignment = 1
+max_length = 10
+clear_button_enabled = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=345625377]
+layout_mode = 2
+theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_oov0a")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=47328748]
+layout_mode = 2
+text = "Room Code"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoomEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1656564343]
+layout_mode = 2
+alignment = 1
+max_length = 10
+clear_button_enabled = true
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=762127337]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Join"
