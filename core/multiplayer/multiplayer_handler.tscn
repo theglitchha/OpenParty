@@ -36,8 +36,7 @@ offset_right = 133.5
 offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-mouse_behavior_recursive = 1
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/Disconnected" unique_id=811705796]
 layout_mode = 1
