@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://c0odpx6esa1pn"]
 
+[ext_resource type="Script" uid="uid://b6oxwj46nq2ss" path="res://core/ui/web_main_menu.gd" id="1_a7gjd"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oov0a"]
 
 [node name="WebMainMenu" type="CanvasLayer" unique_id=432293338]
+script = ExtResource("1_a7gjd")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=285806579]
 anchors_preset = 15
@@ -15,38 +18,56 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=513805389]
+[node name="Connection" type="VBoxContainer" parent="MarginContainer" unique_id=513805389]
+visible = false
 custom_minimum_size = Vector2(200, 240)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1269008476]
+[node name="Label" type="Label" parent="MarginContainer/Connection" unique_id=1269008476]
 layout_mode = 2
 text = "Username"
 vertical_alignment = 1
 
-[node name="NameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=735110365]
+[node name="NameEdit" type="LineEdit" parent="MarginContainer/Connection" unique_id=735110365]
 layout_mode = 2
-alignment = 1
 max_length = 10
 clear_button_enabled = true
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=345625377]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Connection" unique_id=345625377]
 layout_mode = 2
 theme_override_constants/separation = 48
 theme_override_styles/separator = SubResource("StyleBoxEmpty_oov0a")
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=47328748]
+[node name="Label2" type="Label" parent="MarginContainer/Connection" unique_id=47328748]
 layout_mode = 2
 text = "Room Code"
 vertical_alignment = 1
 
-[node name="RoomEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=1656564343]
+[node name="RoomEdit" type="LineEdit" parent="MarginContainer/Connection" unique_id=1656564343]
 layout_mode = 2
-alignment = 1
-max_length = 10
+max_length = 5
 clear_button_enabled = true
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=762127337]
+[node name="Join" type="Button" parent="MarginContainer/Connection" unique_id=762127337]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Join"
+
+[node name="Lobby" type="HBoxContainer" parent="MarginContainer" unique_id=1730741746]
+layout_mode = 2
+mouse_behavior_recursive = 1
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Lobby" unique_id=324898842]
+layout_mode = 2
+text = "You're in, "
+
+[node name="PlayerLabel" type="Label" parent="MarginContainer/Lobby" unique_id=1111457196]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Lobby" unique_id=809385898]
+layout_mode = 2
+text = "!"
+
+[connection signal="pressed" from="MarginContainer/Connection/Join" to="." method="_on_join_pressed"]

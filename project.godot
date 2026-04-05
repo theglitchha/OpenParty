@@ -17,6 +17,11 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Database="*uid://b2jsob86sxj44"
+MultiplayerHandler="*uid://drhh80h7m07gx"
+
 [display]
 
 window/size/viewport_width=640
@@ -34,7 +39,8 @@ enabled=PackedStringArray("res://addons/tube/plugin.cfg")
 folder_colors={
 "res://addons/": "red",
 "res://assets/": "yellow",
-"res://core/": "red"
+"res://core/": "red",
+"res://game/": "purple"
 }
 
 [physics]

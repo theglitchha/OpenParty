@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://br1lrxkxqae1l"]
 
+[ext_resource type="Script" uid="uid://df40x88y6b2nd" path="res://core/ui/desktop_main_menu.gd" id="1_fc5li"]
+
 [node name="DesktopMainMenu" type="CanvasLayer" unique_id=432293338]
+script = ExtResource("1_fc5li")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=285806579]
 anchors_preset = 15
@@ -16,23 +19,89 @@ theme_override_constants/margin_bottom = 8
 [node name="Control" type="Control" parent="MarginContainer" unique_id=1805904212]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control" unique_id=513805389]
-custom_minimum_size = Vector2(200, 240)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control" unique_id=1847896229]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/HBoxContainer" unique_id=421528932]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/VBoxContainer" unique_id=1496915523]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "None chosen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/HBoxContainer/VBoxContainer" unique_id=513805389]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/Control/VBoxContainer" unique_id=211446617]
-custom_minimum_size = Vector2(0, 64)
+[node name="Button" type="Button" parent="MarginContainer/Control/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=211446617]
 layout_mode = 2
-text = "Text game"
+theme_override_font_sizes/font_size = 12
+text = "Test game"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Control/HBoxContainer" unique_id=216948043]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=1456687099]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Players"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=803694372]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=373187437]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Room Code -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoomCode" type="Label" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=520096948]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=1124336059]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PlayerContainer" type="VBoxContainer" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=956388783]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreateServer" type="Button" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=1608327819]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Create Room"
+
+[node name="DestroyServer" type="Button" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=584175555]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Destroy Room"
+
+[node name="StartGame" type="Button" parent="MarginContainer/Control/HBoxContainer/VBoxContainer2" unique_id=290057538]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Start Game"
+
+[connection signal="pressed" from="MarginContainer/Control/HBoxContainer/VBoxContainer2/CreateServer" to="." method="_on_create_server_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/HBoxContainer/VBoxContainer2/DestroyServer" to="." method="_on_destroy_server_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/HBoxContainer/VBoxContainer2/StartGame" to="." method="_on_start_game_pressed"]
