@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cc6aqbvg5peii"]
+
+[ext_resource type="Script" uid="uid://blhysaw0sdf5" path="res://core/loading.gd" id="1_lqf35"]
+[ext_resource type="PackedScene" uid="uid://br1lrxkxqae1l" path="res://core/ui/desktop_main_menu.tscn" id="2_csmie"]
+[ext_resource type="PackedScene" uid="uid://c0odpx6esa1pn" path="res://core/ui/web_main_menu.tscn" id="3_8b7py"]
+
+[node name="Loading" type="CanvasLayer" unique_id=1418473089]
+script = ExtResource("1_lqf35")
+desktop_scene = ExtResource("2_csmie")
+web_scene = ExtResource("3_8b7py")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2132771320]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
